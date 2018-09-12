@@ -1,0 +1,33 @@
+ArrayList：数组列表
+1:jdk1.7以上 arrayList的扩容方式从1.5倍+1变成1.5倍（c=c+c>>1）,右移一位就是除以2，余数舍弃
+2：arrayList底层是使用数组进行存储的，比如grow扩容也是直接使用Arrays.copyOf()直接复制到新数组
+3:arrayList可以直接转成数组，使用toArray（），底层也是直接使用Arrays.copyOf进行复制
+4:add(index,E)是把index后面的元素（包含index）全部向后移一位，位移使用的是System.arraycopy（），再把元素填上该位置。
+5：remove（index）是把index（不包含）后面的元素全部向前移一位，并把最后一个元素置null
+6：数组的实现好处就是随机访问速度很快，因为在内存中他们都是连续的，但是中途插入或者删除的效率都很低，因为arraylist会复制整个数组进行位置调整
+7:equals（）是object的一个方法，所以null是没有equals这个方法的，他只是一个关键字
+8：A.retainAll（B），返回AB的交集
+9：获取子集的方法，如果直接使用subList，会导致父子列表关联起来，父列表变化，子列表也会变化，一般创建一个新列表解决这问题：List<E> list=new List<>(l.subList())
+10:使用Iterator进行遍历，在遍历的开始，索引指针指着第一个元素的左边，iterator只能从左向右遍历，不能往回遍历，listIterator就可以，还可以修改列表的值：
+	hasNext：显示指针右边还有没有索引
+	next：右移指针，并输出当前元素
+	previous：先输出当前元素，再左移指针，如果指针已经位于最左边，再调用抛异常
+	hasPrevious：显示指针左边还有没有索引
+11：sort（Comparator c）使用外部比较器进行比较规则的制定
+implement Comparator并实现Compare方式，左参数大于右参数并返回-1时，升序排列即从小到大，相反就降序
+*12：collections.sort与Arrays.sort区别
+
+
+
+LinkedList：链接列表
+1：每一个节点都是一个Node内部类，其中包含了该节点的值item，和他的前一个节点prev，后一个节点next，所以这是一个双向链表
+2：linkedList也提供了toArray（），取出每一个Node的item
+3：插入操作：add(index,E),先把index所在的节点取出来，作为后继节点（succeeding），再取出该节点的前节点（previous），以这两个作为参数新建一个节点，再分别设置前驱结点的next属性为新节点，后继节点的prev属性为新节点
+4：删除操作：把index节点的前驱后继节点连接起来，并把自己全部属性置null
+5：peek：返回队头（first）；poll：删除队头并返回；offer：add到队尾；以上操作如果链表为空都不会抛异常
+6：pop：删除队头并返回，如果链表为null抛异常；push：add到队头
+
+Vector，也是一个数组实现的列表，但是是同步synchronized的，加上同步实现的不好，所以已经舍弃了
+基本操作跟arraylist相近
+
+
