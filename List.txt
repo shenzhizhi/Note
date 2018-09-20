@@ -16,8 +16,9 @@ ArrayList：数组列表
 11：sort（Comparator c）使用外部比较器进行比较规则的制定
 implement Comparator并实现Compare方式，左参数大于右参数并返回-1时，升序排列即从小到大，相反就降序
 *12：collections.sort与Arrays.sort区别
-
-
+    Collections.sort本质上使用的是Arrays.sort，转出对象数组后使用Arrays.list进行排序,排序后使用listIterator把元素复制回数组。
+    Arrays.sort排序会先进性判断，如果LegacyMergeSort.userRequested为true则使用legacyMergeSort（传统归并排序），否则使用ComparableTimSort，这个参数可以通过System.setProperty("java.util.Arrays.useLegacyMergeSort", "true")来设置
+如果使用的是legacyMergeSort。当数组大小小于7时使用插入排序，否则使用归并排序，ComparableTimSort，实际上是用的也是归并排序
 
 LinkedList：链接列表
 1：每一个节点都是一个Node内部类，其中包含了该节点的值item，和他的前一个节点prev，后一个节点next，所以这是一个双向链表
