@@ -1,0 +1,29 @@
+String底层是一个char[] ，一个char存一个字节
+
+
+1：String="asd"和String s=new String ("asd")区别
+直接赋值asd会保存在常量池里，new出来的对象存放在堆
+
+常用方法：
+length()长度
+isEmpty()是否为空，而不是是否为null，跟null比较只能是==null
+charAt(int)获取该下标的char值
+codePointAt（int）返回该下标所在元素的ascii码
+getChars(int srcBegin,int srcEnd,char[] a,int dstBegin) 头2个参数是待分解string的下标，但由于底层使用srcEnd-srcBegin获取长度，所以srcEnd要加1。才能正确截取所需的字符
+getBytes( ) 向bytes数组中复制数据
+equals() 比较值是否相同，如果使用==比较的是引用，只有在参数也是string的情况下才可能返回true
+contentEquals()，如果参数是stringbuffer也可能返回true
+concat（string s）连接字符串，把s连接在后面
+matches(string reg)判断字符串是不是匹配该正则表达式
+replace(char oldchar,char newchar)将旧字符替换为新字符
+contains(CharSequence c) 判断字符串是否包含该元素，参数可以是String，stringbuffer，stringbuilder
+spilt（String regex,int limit） 以正则表达式来分割，limit为次数限时
+static join(String x,String[] ss) 将x插入到ss各个元素中间并形成一个新的串联string
+toUpperCase() 将所有元素变成大写----toLowerCase（）将所有元素变成小写
+trim（）取消前后空白格
+toCharArray（）直接全部转换成char数组，getChars可以选择截取一部分并制定目的地，都是使用的System.arraycopy方法
+String.format(String s,arg1,arg2...) 按顺序解析各个参数的数据类型并代入 String.format("%d",10)
+static valueOf(x)x可以是任何基本数据类型，将其他数据类型转换成string的方法，还有一个copyValueOf（char[ ]），底层实现完全一样,copyvalueOf基本毫无作用
+intern（），先去常量池中寻找有没有该常量，没有加进去，再返回引用，如果有直接返回本身
+
+
