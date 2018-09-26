@@ -39,3 +39,5 @@ Collections.synchronizedList(List)可以返回一个线程安全的ist，同样的,可以使用类似
 Collections.synchronizedMap(map)
 Collections.synchronizedSet(set)
 
+Iterator与ListIterator之间的区别
+Iterator只能从头到尾进行遍历，而listIterator可以从尾到头进行遍历，并且可以直接设置列表的元素，或者添加
