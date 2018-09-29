@@ -1,3 +1,8 @@
+
+*Èç¹ûÔÚ¶ÔÒ»¸ö±äÁ¿½øĞĞ³¤¶È±éÀúÊ±Ê¹ÓÃ£ºfor(int i,int len=s.length();i<len;i++) ¶ø²»ÊÇfor(int i;i<s.length();i++)£¬ÒòÎªºóÕßÃ¿´ÎÑ­»·¶¼»áÈ¥µ÷ÓÃlength·½·¨£¬Õâ¸ö·½·¨µÄÊ±¼ä¸´ÔÓ¶ÈÊÇo£¨n£©,»á¼«´óÓ°ÏìĞÔÄÜ
+
+
+
 ##ArrayList£ºÊı×éÁĞ±í
 arraylistµÄÍ¬²½ÊÇÍ¨¹ılist=Collections.synchronizedList(list)ÊµÏÖµÄ
 1:jdk1.7ÒÔÉÏ arrayListµÄÀ©Èİ·½Ê½´Ó1.5±¶+1±ä³É1.5±¶£¨c=c+c>>1£©,ÓÒÒÆÒ»Î»¾ÍÊÇ³ıÒÔ2£¬ÓàÊıÉáÆú
@@ -20,16 +25,6 @@ implement Comparator²¢ÊµÏÖCompare·½Ê½£¬×ó²ÎÊı´óÓÚÓÒ²ÎÊı²¢·µ»Ø-1Ê±£¬ÉıĞòÅÅÁĞ¼´´ÓĞ
     Collections.sort±¾ÖÊÉÏÊ¹ÓÃµÄÊÇArrays.sort£¬×ª³ö¶ÔÏóÊı×éºóÊ¹ÓÃArrays.list½øĞĞÅÅĞò,ÅÅĞòºóÊ¹ÓÃlistIterator°ÑÔªËØ¸´ÖÆ»ØÊı×é¡£
     Arrays.sortÅÅĞò»áÏÈ½øĞÔÅĞ¶Ï£¬Èç¹ûLegacyMergeSort.userRequestedÎªtrueÔòÊ¹ÓÃlegacyMergeSort£¨´«Í³¹é²¢ÅÅĞò£©£¬·ñÔòÊ¹ÓÃComparableTimSort£¬Õâ¸ö²ÎÊı¿ÉÒÔÍ¨¹ıSystem.setProperty("java.util.Arrays.useLegacyMergeSort", "true")À´ÉèÖÃ
 Èç¹ûÊ¹ÓÃµÄÊÇlegacyMergeSort¡£µ±Êı×é´óĞ¡Ğ¡ÓÚ7Ê±Ê¹ÓÃ²åÈëÅÅĞò£¬·ñÔòÊ¹ÓÃ¹é²¢ÅÅĞò£¬ComparableTimSort£¬Êµ¼ÊÉÏÊÇÓÃµÄÒ²ÊÇ¹é²¢ÅÅĞò
-
-
-
-LinkedList£ºÁ´½ÓÁĞ±í
-1£ºÃ¿Ò»¸ö½Úµã¶¼ÊÇÒ»¸öNodeÄÚ²¿Àà£¬ÆäÖĞ°üº¬ÁË¸Ã½ÚµãµÄÖµitem£¬ºÍËûµÄÇ°Ò»¸ö½Úµãprev£¬ºóÒ»¸ö½Úµãnext£¬ËùÒÔÕâÊÇÒ»¸öË«ÏòÁ´±í
-2£ºlinkedListÒ²Ìá¹©ÁËtoArray£¨£©£¬È¡³öÃ¿Ò»¸öNodeµÄitem
-3£º²åÈë²Ù×÷£ºadd(index,E),ÏÈ°ÑindexËùÔÚµÄ½ÚµãÈ¡³öÀ´£¬×÷Îªºó¼Ì½Úµã£¨succeeding£©£¬ÔÙÈ¡³ö¸Ã½ÚµãµÄÇ°½Úµã£¨previous£©£¬ÒÔÕâÁ½¸ö×÷Îª²ÎÊıĞÂ½¨Ò»¸ö½Úµã£¬ÔÙ·Ö±ğÉèÖÃÇ°Çı½áµãµÄnextÊôĞÔÎªĞÂ½Úµã£¬ºó¼Ì½ÚµãµÄprevÊôĞÔÎªĞÂ½Úµã
-4£ºÉ¾³ı²Ù×÷£º°Ñindex½ÚµãµÄÇ°Çıºó¼Ì½ÚµãÁ¬½ÓÆğÀ´£¬²¢°Ñ×Ô¼ºÈ«²¿ÊôĞÔÖÃnull
-5£ºpeek£º·µ»Ø¶ÓÍ·£¨first£©£»poll£ºÉ¾³ı¶ÓÍ·²¢·µ»Ø£»offer£ºaddµ½¶ÓÎ²£»ÒÔÉÏ²Ù×÷Èç¹ûÁ´±íÎª¿Õ¶¼²»»áÅ×Òì³£
-6£ºpop£ºÉ¾³ı¶ÓÍ·²¢·µ»Ø£¬Èç¹ûÁ´±íÎªnullÅ×Òì³££»push£ºaddµ½¶ÓÍ·
 
 Vector£¬Ò²ÊÇÒ»¸öÊı×éÊµÏÖµÄÁĞ±í£¬µ«ÊÇÊÇÍ¬²½synchronizedµÄ£¬¼ÓÉÏÍ¬²½ÊµÏÖµÄ²»ºÃ£¬ËùÒÔÒÑ¾­ÉáÆúÁË
 »ù±¾²Ù×÷¸úarraylistÏà½ü
